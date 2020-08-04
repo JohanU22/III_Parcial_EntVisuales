@@ -148,6 +148,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BasedeDatos-TiendaIIIParcial.txt" />
     <Content Include="MensajeAennviar.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
