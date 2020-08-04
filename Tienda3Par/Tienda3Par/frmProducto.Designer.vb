@@ -23,8 +23,6 @@ Partial Class frmProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProducto))
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label44 = New System.Windows.Forms.Label()
         Me.PanelNuevoProducto = New System.Windows.Forms.Panel()
         Me.txtFechaVen = New System.Windows.Forms.MaskedTextBox()
         Me.cmbImpto = New System.Windows.Forms.ComboBox()
@@ -55,7 +53,17 @@ Partial Class frmProducto
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.dtgBusquedaProductos = New System.Windows.Forms.DataGridView()
-        Me.Panel13.SuspendLayout()
+        Me.PanelBusqueda = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.btnNuevo = New System.Windows.Forms.PictureBox()
+        Me.txtbuscarCodigo = New System.Windows.Forms.TextBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.btnBuscar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.PanelNuevoProducto.SuspendLayout()
         CType(Me.TGUARDARCAMBIOS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -64,29 +72,12 @@ Partial Class frmProducto
         CType(Me.DATALISTADO_PRODUCTOS_OKA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.dtgBusquedaProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelBusqueda.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.btnNuevo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.Panel13.Controls.Add(Me.Label44)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1037, 48)
-        Me.Panel13.TabIndex = 531
-        '
-        'Label44
-        '
-        Me.Label44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Label44.ForeColor = System.Drawing.Color.White
-        Me.Label44.Location = New System.Drawing.Point(0, 0)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(189, 48)
-        Me.Label44.TabIndex = 334
-        Me.Label44.Text = "Productos"
-        Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PanelNuevoProducto
         '
@@ -114,9 +105,9 @@ Partial Class frmProducto
         Me.PanelNuevoProducto.Controls.Add(Me.MenuStrip2)
         Me.PanelNuevoProducto.Controls.Add(Me.Panel30)
         Me.PanelNuevoProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.PanelNuevoProducto.Location = New System.Drawing.Point(0, 49)
+        Me.PanelNuevoProducto.Location = New System.Drawing.Point(0, 99)
         Me.PanelNuevoProducto.Name = "PanelNuevoProducto"
-        Me.PanelNuevoProducto.Size = New System.Drawing.Size(728, 386)
+        Me.PanelNuevoProducto.Size = New System.Drawing.Size(691, 336)
         Me.PanelNuevoProducto.TabIndex = 532
         '
         'txtFechaVen
@@ -180,9 +171,9 @@ Partial Class frmProducto
         'TGUARDARCAMBIOS
         '
         Me.TGUARDARCAMBIOS.Image = CType(resources.GetObject("TGUARDARCAMBIOS.Image"), System.Drawing.Image)
-        Me.TGUARDARCAMBIOS.Location = New System.Drawing.Point(480, 69)
+        Me.TGUARDARCAMBIOS.Location = New System.Drawing.Point(446, 59)
         Me.TGUARDARCAMBIOS.Name = "TGUARDARCAMBIOS"
-        Me.TGUARDARCAMBIOS.Size = New System.Drawing.Size(242, 77)
+        Me.TGUARDARCAMBIOS.Size = New System.Drawing.Size(242, 79)
         Me.TGUARDARCAMBIOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.TGUARDARCAMBIOS.TabIndex = 629
         Me.TGUARDARCAMBIOS.TabStop = False
@@ -440,26 +431,150 @@ Partial Class frmProducto
         'dtgBusquedaProductos
         '
         Me.dtgBusquedaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgBusquedaProductos.Location = New System.Drawing.Point(727, 49)
+        Me.dtgBusquedaProductos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtgBusquedaProductos.Location = New System.Drawing.Point(0, 0)
         Me.dtgBusquedaProductos.Margin = New System.Windows.Forms.Padding(2)
         Me.dtgBusquedaProductos.Name = "dtgBusquedaProductos"
         Me.dtgBusquedaProductos.RowHeadersWidth = 51
         Me.dtgBusquedaProductos.RowTemplate.Height = 24
-        Me.dtgBusquedaProductos.Size = New System.Drawing.Size(310, 386)
+        Me.dtgBusquedaProductos.Size = New System.Drawing.Size(341, 339)
         Me.dtgBusquedaProductos.TabIndex = 533
+        '
+        'PanelBusqueda
+        '
+        Me.PanelBusqueda.BackColor = System.Drawing.Color.White
+        Me.PanelBusqueda.Controls.Add(Me.dtgBusquedaProductos)
+        Me.PanelBusqueda.Location = New System.Drawing.Point(696, 97)
+        Me.PanelBusqueda.Margin = New System.Windows.Forms.Padding(2)
+        Me.PanelBusqueda.Name = "PanelBusqueda"
+        Me.PanelBusqueda.Size = New System.Drawing.Size(341, 339)
+        Me.PanelBusqueda.TabIndex = 629
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel29)
+        Me.Panel3.Controls.Add(Me.btnNuevo)
+        Me.Panel3.Controls.Add(Me.txtbuscarCodigo)
+        Me.Panel3.Controls.Add(Me.MenuStrip1)
+        Me.Panel3.Controls.Add(Me.Panel13)
+        Me.Panel3.Controls.Add(Me.Label20)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1037, 93)
+        Me.Panel3.TabIndex = 630
+        '
+        'Panel29
+        '
+        Me.Panel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Panel29.Location = New System.Drawing.Point(11, 85)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(273, 2)
+        Me.Panel29.TabIndex = 533
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.White
+        Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
+        Me.btnNuevo.Location = New System.Drawing.Point(862, 50)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(111, 42)
+        Me.btnNuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnNuevo.TabIndex = 359
+        Me.btnNuevo.TabStop = False
+        '
+        'txtbuscarCodigo
+        '
+        Me.txtbuscarCodigo.BackColor = System.Drawing.Color.White
+        Me.txtbuscarCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtbuscarCodigo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtbuscarCodigo.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtbuscarCodigo.ForeColor = System.Drawing.Color.Black
+        Me.txtbuscarCodigo.Location = New System.Drawing.Point(11, 60)
+        Me.txtbuscarCodigo.Name = "txtbuscarCodigo"
+        Me.txtbuscarCodigo.Size = New System.Drawing.Size(272, 22)
+        Me.txtbuscarCodigo.TabIndex = 2
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBuscar, Me.ToolStripMenuItem4})
+        Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
+        Me.MenuStrip1.Location = New System.Drawing.Point(285, 51)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.ShowItemToolTips = True
+        Me.MenuStrip1.Size = New System.Drawing.Size(67, 45)
+        Me.MenuStrip1.TabIndex = 495
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.AutoSize = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.Black
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(50, 30)
+        Me.btnBuscar.Text = "+"
+        Me.btnBuscar.ToolTipText = "Buscar"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(126, 41)
+        Me.ToolStripMenuItem4.Text = "ToolStripMenuItem3"
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Panel13.Controls.Add(Me.Label44)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(0, 0)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(1037, 48)
+        Me.Panel13.TabIndex = 530
+        '
+        'Label44
+        '
+        Me.Label44.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.Label44.ForeColor = System.Drawing.Color.White
+        Me.Label44.Location = New System.Drawing.Point(0, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(189, 48)
+        Me.Label44.TabIndex = 334
+        Me.Label44.Text = "Productos"
+        Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label20
+        '
+        Me.Label20.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label20.Location = New System.Drawing.Point(65, 167)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(165, 20)
+        Me.Label20.TabIndex = 216
+        Me.Label20.Text = "Buscar seleccione en la lupa>>"
         '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1037, 440)
-        Me.Controls.Add(Me.dtgBusquedaProductos)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.PanelBusqueda)
         Me.Controls.Add(Me.PanelNuevoProducto)
-        Me.Controls.Add(Me.Panel13)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmProducto"
         Me.Text = "frmProducto"
-        Me.Panel13.ResumeLayout(False)
         Me.PanelNuevoProducto.ResumeLayout(False)
         Me.PanelNuevoProducto.PerformLayout()
         CType(Me.TGUARDARCAMBIOS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -471,12 +586,16 @@ Partial Class frmProducto
         Me.MenuStrip2.ResumeLayout(False)
         Me.MenuStrip2.PerformLayout()
         CType(Me.dtgBusquedaProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelBusqueda.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.btnNuevo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents Label44 As Label
     Friend WithEvents PanelNuevoProducto As Panel
     Friend WithEvents txtFechaVen As MaskedTextBox
     Friend WithEvents cmbImpto As ComboBox
@@ -507,4 +626,15 @@ Partial Class frmProducto
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents Panel30 As Panel
     Friend WithEvents dtgBusquedaProductos As DataGridView
+    Friend WithEvents PanelBusqueda As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents btnNuevo As PictureBox
+    Friend WithEvents txtbuscarCodigo As TextBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents btnBuscar As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Label20 As Label
 End Class

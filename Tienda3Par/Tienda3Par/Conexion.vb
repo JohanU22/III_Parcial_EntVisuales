@@ -122,4 +122,53 @@ Public Class Conexion
         End Try
     End Function
 
+    Public Function consultarProducto(idCodigo As Integer) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarProducto", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idProducto", idCodigo)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function insertarProducto(idUsuario As Integer, nombre As String, stock As Integer, precioCompra As Double,
+                                precioVenta As Double, fechaVenc As String, stockMinimo As Integer, impt As Double)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("insertarProducto", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idProducto", idUsuario)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@stock", stock)
+            cmb.Parameters.AddWithValue("@precioCompra", precioCompra)
+            cmb.Parameters.AddWithValue("@precioVenta", precioVenta)
+            cmb.Parameters.AddWithValue("@fechaVencimiento", fechaVenc)
+            cmb.Parameters.AddWithValue("@stockMinimo", stockMinimo)
+            cmb.Parameters.AddWithValue("@impuesto", impt)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 End Class

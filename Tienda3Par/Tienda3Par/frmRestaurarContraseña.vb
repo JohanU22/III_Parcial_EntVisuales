@@ -6,7 +6,6 @@ Public Class frmRestaurarContraseña
     Dim conexion As New Conexion()
     Private correos As New MailMessage
     Private envios As New SmtpClient
-
     Private Sub btnEnviarCorreo_Click(sender As Object, e As EventArgs) Handles btnEnviarCorreo.Click
         mostrarPSW()
         rtxHtml.Text = rtxHtml.Text.Replace("@psw", txtPswMostra.Text)
@@ -50,4 +49,5 @@ Public Class frmRestaurarContraseña
             MessageBox.Show("Correo invalido", "Error")
         End Try
     End Sub
+
 End Class
