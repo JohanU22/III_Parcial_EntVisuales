@@ -46,6 +46,9 @@ Partial Class frmUsuario
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
@@ -290,18 +293,48 @@ Partial Class frmUsuario
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(528, 253)
+        Me.btnAgregar.Location = New System.Drawing.Point(528, 315)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(93, 23)
         Me.btnAgregar.TabIndex = 12
-        Me.btnAgregar.Text = "Agregar Usuario"
+        Me.btnAgregar.Text = "Guardar"
         Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(528, 231)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(93, 23)
+        Me.btnLimpiar.TabIndex = 13
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(528, 344)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(93, 23)
+        Me.btnModificar.TabIndex = 14
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(528, 373)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(93, 23)
+        Me.btnEliminar.TabIndex = 15
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(699, 450)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel7)
@@ -340,4 +373,7 @@ Partial Class frmUsuario
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel7 As Panel
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents btnLimpiar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnEliminar As Button
 End Class
